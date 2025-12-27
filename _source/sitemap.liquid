@@ -7,7 +7,7 @@ permalink: /sitemap.xml
 {% for item in collections.all %}
   {% if item.data.noindex != false %}
   <url>
-    <loc>{{ env.baseUrl }}{{ item.url }}</loc>
+    <loc>{{ site.baseUrl }}{{ item.url }}</loc>
   </url>
   {% endif %}
 {% endfor %}

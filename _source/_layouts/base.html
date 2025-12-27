@@ -33,7 +33,7 @@
     {%- if canonical -%}
     <link rel="canonical" href="{{ canonical }}">
     {%- else -%}
-    <link rel="canonical" href="{{ env.baseUrl }}{{ page.url }}">
+    <link rel="canonical" href="{{ site.baseUrl }}{{ page.url }}">
     {%- endif -%}
 
     <link rel="alternate icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
