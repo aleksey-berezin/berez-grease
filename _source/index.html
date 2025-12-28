@@ -32,7 +32,7 @@ permalink: /
 
   <!-- Main Content with Side Nav -->
   <div class="content-layout container">
-    <nav class="side-nav sticky@md top-lg">
+    <nav class="side-nav">
       <ul class="unlisted">
         <li><a href="#about" class="side-nav-link">About</a></li>
         <li><a href="#strategy" class="side-nav-link">Strategy</a></li>
@@ -134,7 +134,7 @@ permalink: /
         <div class="portfolio-grid">
           <article class="property-card">
             <div class="property-image">
-              <img src="https://placehold.co/600x400/e8e8e8/666666?text=Glisan+Townhomes" alt="Glisan Townhomes">
+              {% image "glisan-townhomes.jpg", "Glisan Townhomes exterior", null, "(min-width: 640px) 50vw, 100vw" %}
             </div>
             <div class="property-info">
               <h3>Glisan Townhomes</h3>
@@ -146,7 +146,7 @@ permalink: /
 
           <article class="property-card">
             <div class="property-image">
-              <img src="https://placehold.co/600x400/e8e8e8/666666?text=Lincoln+Court" alt="Lincoln Court Townhomes">
+              {% image "lincoln-court-townhomes.jpg", "Lincoln Court Townhomes exterior", null, "(min-width: 640px) 50vw, 100vw" %}
             </div>
             <div class="property-info">
               <h3>Lincoln Court Townhomes</h3>
@@ -158,7 +158,7 @@ permalink: /
 
           <article class="property-card">
             <div class="property-image">
-              <img src="https://placehold.co/600x400/e8e8e8/666666?text=Roberts+Court" alt="Roberts Court Townhomes">
+              {% image "roberts-court-townhomes.webp", "Roberts Court Townhomes street view", null, "(min-width: 640px) 50vw, 100vw" %}
             </div>
             <div class="property-info">
               <h3>Roberts Court Townhomes</h3>
@@ -170,7 +170,7 @@ permalink: /
 
           <article class="property-card">
             <div class="property-image">
-              <img src="https://placehold.co/600x400/e8e8e8/666666?text=459+Rock" alt="459 Rock Apartments">
+              {% image "459-rock-apartments.jpg", "459 Rock Apartments building exterior", null, "(min-width: 640px) 50vw, 100vw" %}
             </div>
             <div class="property-info">
               <h3>459 Rock Apartments</h3>
@@ -201,8 +201,8 @@ permalink: /
           Have a property that fits our criteria? Interested in learning more about Berez Investment Group? We'd love to hear from you.
         </p>
         
-        <form class="contact-form" data-cloudcannon-form="true" method="post">
-          <input type="hidden" name="_to" value="contact@berez.in">
+        <form class="contact-form" method="post">
+          <input type="hidden" name="inbox_key" value="berez-contact-form">
           
           <div class="form-group">
             <label for="name">Name</label>

@@ -12,9 +12,33 @@
       localStorage.removeItem('mode');
     </script>
 
-    <title>{% if title %}{{ title | escape }} | {% endif %}{{ site.title | escape }}</title>
+    <title>{% if title and title != site.title %}{{ title | escape }} | {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 
-    <meta name="description" content="{% if description %}{{ description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    {%- assign page_title = title | default: site.title -%}
+    {%- assign page_description = description | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
+    {%- assign page_image = image | default: site.image -%}
+    {%- assign page_url = site.baseUrl | append: page.url -%}
+
+    <meta name="description" content="{{ page_description }}">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:url" content="{{ page_url }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="{{ site.locale | default: 'en_US' }}">
+    {%- if page_image -%}
+    <meta property="og:image" content="{{ site.baseUrl }}{{ page_image }}">
+    {%- endif -%}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page_title }}">
+    <meta name="twitter:description" content="{{ page_description }}">
+    {%- if page_image -%}
+    <meta name="twitter:image" content="{{ site.baseUrl }}{{ page_image }}">
+    {%- endif -%}
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +50,7 @@
     {%- if canonical -%}
     <link rel="canonical" href="{{ canonical }}">
     {%- else -%}
-    <link rel="canonical" href="{{ site.baseUrl }}{{ page.url }}">
+    <link rel="canonical" href="{{ page_url }}">
     {%- endif -%}
 
     <link rel="alternate icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
@@ -48,6 +72,22 @@
     <link rel="stylesheet" href="{{ sheet }}" media="all">
     {%- endfor -%}
     {%- endif -%}
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "{{ site.title }}",
+      "description": "{{ site.description }}",
+      "url": "{{ site.baseUrl }}",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Portland-Vancouver-Hillsboro Metropolitan Area"
+      },
+      "knowsAbout": ["Multifamily Real Estate", "Apartment Investments", "Property Management"]
+    }
+    </script>
 
     <script src="/assets/js/app.js" type="module"></script>
     {%- if javascript -%}
