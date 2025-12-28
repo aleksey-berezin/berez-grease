@@ -1,6 +1,6 @@
 {
-  "name": "berez",
-  "version": "3.0.0",
+  "name": "berez-web",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "devDependencies": {
