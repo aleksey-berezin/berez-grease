@@ -54,24 +54,6 @@
 		color: #8b3a3a;
 	}
 
-	.logo-full {
-		display: none;
-	}
-
-	.logo-short {
-		display: inline;
-	}
-
-	@media (--md) {
-		.logo-full {
-			display: inline;
-		}
-
-		.logo-short {
-			display: none;
-		}
-	}
-
 	/* -------------------------------------------------------------------------
 	 Hero
 	 -------------------------------------------------------------------------- */
@@ -260,6 +242,114 @@
 	}
 
 	/* -------------------------------------------------------------------------
+	 Why Portland
+	 -------------------------------------------------------------------------- */
+	.stats-row {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		margin-bottom: var(--space-md);
+	}
+
+	.stat-item {
+		text-align: center;
+		padding: var(--space-md) var(--space-md);
+		border-right: 1px solid #e0e0e0;
+	}
+
+	.stat-item:last-child {
+		border-right: none;
+	}
+
+	.stat-value {
+		display: block;
+		font-size: var(--font-size-xl);
+		font-weight: var(--font-weight-xxl);
+		color: #8b3a3a;
+		line-height: 1;
+		margin-bottom: var(--space-xxs);
+	}
+
+	.stat-label {
+		display: block;
+		font-size: var(--font-size-xs);
+		font-weight: var(--font-weight-md);
+		color: #666;
+		text-transform: uppercase;
+		letter-spacing: var(--letter-spacing-sm);
+	}
+
+	@media (max-width: 900px) {
+		.stats-row {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		
+		.stat-item:nth-child(2) {
+			border-right: none;
+		}
+		
+		.stat-item:nth-child(1),
+		.stat-item:nth-child(2) {
+			border-bottom: 1px solid #e0e0e0;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.stats-row {
+			grid-template-columns: 1fr;
+		}
+		
+		.stat-item {
+			text-align: left;
+			padding: var(--space-sm) 0;
+			border-right: none;
+			border-bottom: 1px solid #e0e0e0;
+		}
+		
+		.stat-item:last-child {
+			border-bottom: none;
+		}
+	}
+
+	/* Animate stats on scroll */
+	@media (prefers-reduced-motion: no-preference) {
+		.stat-item:nth-child(1) { animation: stat-pop 0.5s ease-out 0.1s both; }
+		.stat-item:nth-child(2) { animation: stat-pop 0.5s ease-out 0.2s both; }
+		.stat-item:nth-child(3) { animation: stat-pop 0.5s ease-out 0.3s both; }
+		.stat-item:nth-child(4) { animation: stat-pop 0.5s ease-out 0.4s both; }
+		
+		@keyframes stat-pop {
+			from {
+				opacity: 0;
+				transform: translateY(1rem);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+
+	.portland-prose {
+		margin-top: var(--space-md);
+	}
+
+	.portland-prose p {
+		font-size: var(--font-size-md);
+		line-height: var(--line-height-lg);
+		color: #333;
+		margin-bottom: var(--space-md);
+		max-width: 65ch;
+	}
+
+	.portland-prose p:last-child {
+		margin-bottom: 0;
+	}
+
+	.portland-prose strong {
+		color: #1a1a1a;
+	}
+
+	/* -------------------------------------------------------------------------
 	 Criteria Grid
 	 -------------------------------------------------------------------------- */
 	.criteria-grid {
@@ -331,13 +421,15 @@
 	 -------------------------------------------------------------------------- */
 	.portfolio-grid {
 		display: grid;
-		gap: var(--space-lg);
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--space-md);
 		margin-top: var(--space-lg);
+		max-width: 56rem;
 	}
 
-	@media (--sm) {
+	@media (max-width: 640px) {
 		.portfolio-grid {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: 1fr;
 		}
 	}
 
@@ -345,19 +437,40 @@
 		background: white;
 		border-radius: var(--border-radius-md);
 		overflow: hidden;
-		box-shadow: var(--shadow-md);
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+		transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+		border: 2px solid transparent;
 	}
 
 	.property-card:hover {
 		transform: translateY(-4px);
-		box-shadow: var(--shadow-lg);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+		border-color: #8b3a3a;
 	}
 
 	.property-image {
-		aspect-ratio: 3 / 2;
+		position: relative;
+		aspect-ratio: 16 / 10;
 		overflow: hidden;
 		background: #f0f0f0;
+	}
+
+	/* Gradient overlay */
+	.property-image::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 60%;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+		opacity: 0.7;
+		transition: opacity 0.3s ease;
+		pointer-events: none;
+	}
+
+	.property-card:hover .property-image::after {
+		opacity: 0.4;
 	}
 
 	.property-image img,
@@ -371,43 +484,66 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform 0.4s ease;
+		transition: transform 0.5s ease, filter 0.5s ease;
+		filter: saturate(0.8);
 	}
 
 	.property-card:hover .property-image img {
-		transform: scale(1.05);
+		transform: scale(1.08);
+		filter: saturate(1.1) brightness(1.05);
+	}
+
+	/* Property name overlay on image */
+	.property-image-title {
+		position: absolute;
+		bottom: var(--space-sm);
+		left: var(--space-sm);
+		right: var(--space-sm);
+		z-index: 1;
+		font-size: var(--font-size-md);
+		font-weight: var(--font-weight-xl);
+		color: white;
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+		margin: 0;
 	}
 
 	.property-info {
-		padding: var(--space-md);
+		padding: var(--space-sm) var(--space-md) var(--space-md);
 	}
 
 	.property-info h3 {
-		font-size: var(--font-size-lg);
+		font-size: var(--font-size-md);
 		font-weight: var(--font-weight-xl);
 		color: #1a1a1a;
 		margin-bottom: var(--space-xxs);
+	}
+
+	/* Hide h3 when using overlay title */
+	.property-card:has(.property-image-title) .property-info h3 {
+		display: none;
 	}
 
 	.property-meta {
 		font-size: var(--font-size-xs);
 		font-weight: var(--font-weight-md);
 		color: #666666;
-		margin-bottom: var(--space-sm);
+		margin-bottom: var(--space-xs);
 	}
 
 	.property-desc {
 		font-size: var(--font-size-sm);
 		line-height: var(--line-height-md);
 		color: #333333;
-		margin-bottom: var(--space-sm);
+		margin-bottom: var(--space-xs);
 	}
 
 	.property-link {
-		font-size: var(--font-size-sm);
+		display: inline-block;
+		font-size: var(--font-size-xs);
 		font-weight: var(--font-weight-lg);
 		color: #8b3a3a;
 		text-decoration: none;
+		transition: color 0.2s ease;
 	}
 
 	.property-link:hover {

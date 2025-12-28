@@ -8,11 +8,10 @@ permalink: /
 ---
 
 <header id="header" class="site-header">
-  <nav class="container flex no-wrap justify-between align-items-center">
-    <a class="logo" href="/">
-      <span class="font-weight-xxl"><span class="logo-short">Berez</span><span class="logo-full">Berez Investment Group</span></span>
-    </a>
-    <a href="#contact" class="button --primary">Contact Us</a>
+  <nav class="container">
+<a class="logo" href="/">
+          <span class="font-weight-xxl">Berez Investment Group</span>
+        </a>
   </nav>
 </header>
 
@@ -36,6 +35,7 @@ permalink: /
       <ul class="unlisted">
         <li><a href="#about" class="side-nav-link">About</a></li>
         <li><a href="#strategy" class="side-nav-link">Strategy</a></li>
+        <li><a href="#portland" class="side-nav-link">Why Portland</a></li>
         <li><a href="#criteria" class="side-nav-link">Acquisition Criteria</a></li>
         <li><a href="#portfolio" class="side-nav-link">Portfolio</a></li>
         <li><a href="#contact" class="side-nav-link">Contact</a></li>
@@ -87,6 +87,47 @@ permalink: /
         </div>
       </section>
 
+      <!-- Why Portland Section -->
+      <section id="portland" class="content-section">
+        <span class="section-label">Our Market</span>
+        <h2 class="section-title">Why Portland</h2>
+        
+        <p class="section-text line-length-lg mb-lg">
+          The Portland metro area offers solid fundamentals for multifamily investors. Demand is outpacing new supply, vacancy is coming down, and rent growth is on track to recover. Here's what the numbers look like:
+        </p>
+        
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-value">6.6%</span>
+            <span class="stat-label">Vacancy</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">5,300+</span>
+            <span class="stat-label">Units Absorbed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">1,800</span>
+            <span class="stat-label">Under Construction</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">~2%</span>
+            <span class="stat-label">Rent Growth Forecast</span>
+          </div>
+        </div>
+        
+        <div class="portland-prose">
+          <p><strong>Supply is drying up.</strong> Construction has dropped from 13,000 units in 2022 to under 2,000 today. Portland is heading into its slowest delivery year since 2011. Less competition means better occupancy for existing properties.</p>
+          
+          <p><strong>Demand stays strong.</strong> Over 5,300 units were absorbed in the last 12 months — well above the 4,000 delivered. Renters are moving to affordable East Portland submarkets like Gresham and Troutdale for value and space.</p>
+          
+          <p><strong>Rents are recovering.</strong> After a soft 2023, rent growth is turning positive. The forecast calls for around 2% growth by the end of 2026. Mid-range properties (3 Star) are outperforming luxury in both occupancy and stability.</p>
+        </div>
+        
+        <p class="section-text line-length-lg mt-lg" style="font-size: var(--font-size-xs); color: #999;">
+          Source: CoStar Market Report, Q3 2025
+        </p>
+      </section>
+
       <!-- Criteria Section -->
       <section id="criteria" class="content-section">
         <span class="section-label">What We're Looking For</span>
@@ -95,16 +136,22 @@ permalink: /
         <div class="criteria-grid">
           <div class="criteria-item">
             <span class="criteria-label">Property Type</span>
-            <span class="criteria-value">Apartments</span>
+            <span class="criteria-value">Townhomes & Apartments</span>
             <span class="criteria-detail">Under 75 units</span>
+          </div>
+          <div class="criteria-item">
+            <span class="criteria-label">Unit Mix</span>
+            <span class="criteria-value">2–3 Bedrooms</span>
+            <span class="criteria-detail">Family-sized units</span>
           </div>
           <div class="criteria-item">
             <span class="criteria-label">Asset Class</span>
             <span class="criteria-value">B and C</span>
+            <span class="criteria-detail">3–4 Star</span>
           </div>
           <div class="criteria-item">
             <span class="criteria-label">Construction</span>
-            <span class="criteria-value">Garden / Mid-Rise</span>
+            <span class="criteria-value">Garden / Townhouse</span>
             <span class="criteria-detail">1980s or newer</span>
           </div>
           <div class="criteria-item">
@@ -114,15 +161,27 @@ permalink: /
           <div class="criteria-item">
             <span class="criteria-label">Transaction Size</span>
             <span class="criteria-value">$2–10M</span>
+            <span class="criteria-detail">Can assume financing</span>
           </div>
           <div class="criteria-item">
-            <span class="criteria-label">Market</span>
-            <span class="criteria-value">Portland Metro</span>
+            <span class="criteria-label">Target Markets</span>
+            <span class="criteria-value">East Portland</span>
+            <span class="criteria-detail">Gresham, Troutdale, Fairview</span>
+          </div>
+          <div class="criteria-item">
+            <span class="criteria-label">Also Consider</span>
+            <span class="criteria-value">Greater Portland</span>
+            <span class="criteria-detail">Clackamas, Washington Co.</span>
+          </div>
+          <div class="criteria-item">
+            <span class="criteria-label">Value-Add</span>
+            <span class="criteria-value">Light to Moderate</span>
+            <span class="criteria-detail">Stable or needs repositioning</span>
           </div>
         </div>
         
         <p class="criteria-note">
-          We seek properties with operational and physical repositioning opportunities.
+          We focus on workforce housing in growing suburban markets with limited new supply.
         </p>
       </section>
 
@@ -135,9 +194,9 @@ permalink: /
           <article class="property-card">
             <div class="property-image">
               {% image "glisan-townhomes.jpg", "Glisan Townhomes exterior", null, "(min-width: 640px) 50vw, 100vw" %}
+              <h3 class="property-image-title">Glisan Townhomes</h3>
             </div>
             <div class="property-info">
-              <h3>Glisan Townhomes</h3>
               <p class="property-meta">10 units · Built 2008</p>
               <p class="property-desc">Newer townhome community with 2 and 3 bedroom layouts.</p>
               <a href="https://www.glisantownhomes.com/" target="_blank" rel="noopener" class="property-link">View Property →</a>
@@ -147,9 +206,9 @@ permalink: /
           <article class="property-card">
             <div class="property-image">
               {% image "lincoln-court-townhomes.jpg", "Lincoln Court Townhomes exterior", null, "(min-width: 640px) 50vw, 100vw" %}
+              <h3 class="property-image-title">Lincoln Court Townhomes</h3>
             </div>
             <div class="property-info">
-              <h3>Lincoln Court Townhomes</h3>
               <p class="property-meta">16 units · Built 1972 · Renovated</p>
               <p class="property-desc">Renovated townhome community with 2 and 3 bedroom layouts.</p>
               <a href="https://www.lincolntownhomes.com/" target="_blank" rel="noopener" class="property-link">View Property →</a>
@@ -159,9 +218,9 @@ permalink: /
           <article class="property-card">
             <div class="property-image">
               {% image "roberts-court-townhomes.webp", "Roberts Court Townhomes street view", null, "(min-width: 640px) 50vw, 100vw" %}
+              <h3 class="property-image-title">Roberts Court Townhomes</h3>
             </div>
             <div class="property-info">
-              <h3>Roberts Court Townhomes</h3>
               <p class="property-meta">20 units · Built 2006</p>
               <p class="property-desc">Upscale townhome community with 2 and 3 bedroom layouts.</p>
               <a href="https://www.robertstownhomes.com/" target="_blank" rel="noopener" class="property-link">View Property →</a>
@@ -171,23 +230,12 @@ permalink: /
           <article class="property-card">
             <div class="property-image">
               {% image "459-rock-apartments.jpg", "459 Rock Apartments building exterior", null, "(min-width: 640px) 50vw, 100vw" %}
+              <h3 class="property-image-title">459 Rock Apartments</h3>
             </div>
             <div class="property-info">
-              <h3>459 Rock Apartments</h3>
               <p class="property-meta">44 units · Built 2022 · Mixed Use</p>
               <p class="property-desc">Mid-rise mixed use community with 2 and 3 bedroom layouts.</p>
               <a href="https://www.459rock.com/" target="_blank" rel="noopener" class="property-link">View Property →</a>
-            </div>
-          </article>
-
-          <article class="property-card property-card--wip">
-            <div class="property-image">
-              <img src="https://placehold.co/600x400/e8e8e8/666666?text=Eastgate+Terrace" alt="Eastgate Terrace">
-            </div>
-            <div class="property-info">
-              <h3>Eastgate Terrace</h3>
-              <p class="property-meta">Under Renovation</p>
-              <p class="property-desc">Currently undergoing renovation and repositioning.</p>
             </div>
           </article>
         </div>
