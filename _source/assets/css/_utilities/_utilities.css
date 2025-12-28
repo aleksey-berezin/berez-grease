@@ -1,12 +1,69 @@
-@import "animate.css";
-@import "border.css";
-@import "color.css";
-@import "display.css";
-@import "flex.css";
-@import "grid.css";
-@import "margin.css";
-@import "opacity.css";
-@import "padding.css";
-@import "position.css";
-@import "shadow.css";
-@import "text.css";
+/* ==========================================================================
+   Minimal Utilities - Only what's actually used
+   ========================================================================== */
+
+/* Flexbox */
+.flex {
+	display: flex;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+/* Display */
+.h-screen {
+	height: 100vh;
+	height: 100dvh;
+}
+
+/* Text */
+.center {
+	text-align: center;
+}
+
+.font-size-xxxxl {
+	font-size: var(--font-size-xxxxl);
+}
+
+.font-weight-xxl {
+	font-weight: var(--font-weight-xxl);
+}
+
+.line-length-md {
+	max-inline-size: var(--line-length-md);
+}
+
+.line-length-lg {
+	max-inline-size: var(--line-length-lg);
+}
+
+.unlisted {
+	list-style: none;
+	padding-left: 0;
+}
+
+/* Margin */
+.mt-0 {
+	margin-top: 0;
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
+
+.mt-lg {
+	margin-top: var(--space-lg);
+}
+
+.mb-lg {
+	margin-bottom: var(--space-lg);
+}

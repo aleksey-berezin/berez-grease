@@ -101,6 +101,12 @@ _inputs:
         - docs
         - page
 
+# Preserved paths - directories to preserve between builds (relative to output)
+# If files in these paths haven't changed, they won't be rebuilt
+preserved_paths:
+  - assets/images
+  - assets/fonts
+
 # Build hooks
 timezone: Etc/UTC
 

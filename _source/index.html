@@ -2,8 +2,6 @@
 title: Berez Investment Group
 description: Boutique investment company focused on multifamily acquisitions in the Pacific Northwest.
 layout: base.html
-stylesheet:
-  - /assets/css/berez.css
 permalink: /
 ---
 
@@ -123,7 +121,7 @@ permalink: /
           <p><strong>Rents are recovering.</strong> After a soft 2023, rent growth is turning positive. The forecast calls for around 2% growth by the end of 2026. Mid-range properties (3 Star) are outperforming luxury in both occupancy and stability.</p>
         </div>
         
-        <p class="section-text line-length-lg mt-lg" style="font-size: var(--font-size-xs); color: #999;">
+        <p class="source-citation">
           Source: CoStar Market Report, Q3 2025
         </p>
       </section>
@@ -245,7 +243,7 @@ permalink: /
       <section id="contact" class="content-section">
         <span class="section-label">Get In Touch</span>
         <h2 class="section-title">Contact Us</h2>
-        <p class="section-text line-length-md mb-lg">
+        <p class="section-text line-length-md">
           Have a property that fits our criteria? Interested in learning more about Berez Investment Group? We'd love to hear from you.
         </p>
         
@@ -259,12 +257,12 @@ permalink: /
           
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required>
           </div>
           
           <div class="form-group">
             <label for="subject">Subject</label>
-            <select id="subject" name="subject">
+            <select id="subject" name="subject" required>
               <option value="">Select a subject</option>
               <option value="property">Property Submission</option>
               <option value="investor">Investor Inquiry</option>
