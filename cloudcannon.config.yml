@@ -106,6 +106,7 @@ _inputs:
 preserved_paths:
   - assets/images
   - assets/fonts
+  - .cache
 
 # Build hooks
 timezone: Etc/UTC

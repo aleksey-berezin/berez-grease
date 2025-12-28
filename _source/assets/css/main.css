@@ -50,7 +50,13 @@
 	-webkit-backdrop-filter: blur(16px) saturate(180%);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-	padding-block: var(--space-sm);
+	padding-block: var(--space-md);
+}
+
+@media (max-width: 640px) {
+	.site-header {
+		padding-block: var(--space-sm);
+	}
 }
 
 .logo {
@@ -58,6 +64,7 @@
 	color: #1a1a1a;
 	text-decoration: none;
 	letter-spacing: var(--letter-spacing-sm);
+	transition: color 0.2s ease;
 }
 
 .logo:hover {

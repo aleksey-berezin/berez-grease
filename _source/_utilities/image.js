@@ -36,7 +36,7 @@ export default async function image(
 		outputDir: './_site/assets/images/',
 		cacheOptions: {
 			duration: '1y',
-			directory: '.cache',
+			directory: './_site/.cache',
 			removeUrlQueryParams: false,
 		},
 		filenameFormat: (id, src, width, format) => {
@@ -91,7 +91,7 @@ export async function heroImage(src, alt, cssClass = null, sizes = '100vw') {
 		outputDir: './_site/assets/images/',
 		cacheOptions: {
 			duration: '1y',
-			directory: '.cache',
+			directory: './_site/.cache',
 			removeUrlQueryParams: false,
 		},
 		filenameFormat: (id, src, width, format) => {
@@ -143,7 +143,7 @@ export async function bgImage(src, width = 1600) {
 		outputDir: './_site/assets/images/',
 		cacheOptions: {
 			duration: '1y',
-			directory: '.cache',
+			directory: './_site/.cache',
 			removeUrlQueryParams: false,
 		},
 		filenameFormat: (id, src, width, format) => {
