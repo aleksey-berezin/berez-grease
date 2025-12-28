@@ -6,11 +6,32 @@ permalink: /
 ---
 
 <header id="header" class="site-header">
-  <nav class="container">
-<a class="logo" href="/">
-          <span class="font-weight-xxl">Berez Investment Group</span>
-        </a>
-  </nav>
+  <div class="container">
+    <div class="site-header__inner">
+      <a class="logo" href="/">
+        <span class="font-weight-xxl">Berez Investment Group</span>
+      </a>
+      
+      <burger-menu class="burger-menu" max-width="767">
+        <button class="burger-menu__trigger" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="burger-menu__bar"></span>
+        </button>
+        <nav class="burger-menu__panel" aria-label="Primary navigation">
+          <a class="burger-menu__logo" href="/">
+            <span class="font-weight-xxl">Berez Investment Group</span>
+          </a>
+          <ul class="burger-menu__list">
+            <li><a href="#about" class="burger-menu__link">About</a></li>
+            <li><a href="#strategy" class="burger-menu__link">Strategy</a></li>
+            <li><a href="#portland" class="burger-menu__link">Why Portland</a></li>
+            <li><a href="#criteria" class="burger-menu__link">Acquisition Criteria</a></li>
+            <li><a href="#portfolio" class="burger-menu__link">Portfolio</a></li>
+            <li><a href="#contact" class="burger-menu__link">Contact</a></li>
+          </ul>
+        </nav>
+      </burger-menu>
+    </div>
+  </div>
 </header>
 
 <main>
