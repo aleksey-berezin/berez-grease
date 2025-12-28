@@ -486,7 +486,9 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 	gap: 0;
-	margin-bottom: var(--space-md);
+	margin-top: var(--space-md); /* Tighter spacing above */
+	margin-bottom: var(--space-md); /* Tighter spacing below */
+	max-width: var(--line-length-lg); /* Match text line length */
 }
 
 .stat-item {
@@ -635,7 +637,8 @@
 }
 
 .portland-prose {
-	margin-top: var(--space-md);
+	margin-top: var(--space-md); /* Match stats-row bottom margin for even spacing */
+	max-width: var(--line-length-lg); /* Match intro paragraph line length */
 }
 
 .portland-prose p {
@@ -643,7 +646,6 @@
 	line-height: var(--line-height-lg);
 	color: var(--color-text);
 	margin-bottom: var(--space-md);
-	max-width: 65ch;
 }
 
 .portland-prose p:last-child {
@@ -1030,9 +1032,17 @@
    Source Citation
    -------------------------------------------------------------------------- */
 .source-citation {
-	font-size: var(--font-size-xs);
-	color: #999999; /* Muted citation color - keep as is */
 	margin-top: var(--space-lg);
+}
+
+.source-citation cite {
+	display: block;
+	font-size: var(--font-size-xs);
+	font-style: normal; /* Remove default italic */
+	color: var(--color-accent);
+	font-weight: var(--font-weight-md);
+	text-transform: uppercase;
+	letter-spacing: var(--letter-spacing-sm);
 }
 
 /* -------------------------------------------------------------------------
