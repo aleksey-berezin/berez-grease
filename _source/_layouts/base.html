@@ -77,15 +77,42 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "RealEstateAgent",
+      "@type": "Organization",
       "name": "{{ site.title }}",
+      "alternateName": "Berez",
       "description": "{{ site.description }}",
       "url": "{{ site.baseUrl }}",
       "areaServed": {
-        "@type": "Place",
-        "name": "Portland-Vancouver-Hillsboro Metropolitan Area"
+        "@type": "AdministrativeArea",
+        "name": "Portland Metropolitan Area",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Oregon",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "United States"
+          }
+        }
       },
-      "knowsAbout": ["Multifamily Real Estate", "Apartment Investments", "Property Management"]
+      "knowsAbout": [
+        "Multifamily Real Estate Investment",
+        "Apartment Building Acquisitions",
+        "Value-Add Real Estate",
+        "Property Repositioning",
+        "Asset Management",
+        "B and C Class Apartments",
+        "Garden Style Apartments",
+        "Mid-Rise Apartments"
+      ],
+      "slogan": "Boutique investment company focused on multifamily acquisitions in the Pacific Northwest",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Portland, Oregon"
+      },
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": "1-10"
+      }
     }
     </script>
 
