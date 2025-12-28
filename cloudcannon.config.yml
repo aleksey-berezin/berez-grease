@@ -3,7 +3,7 @@
 
 # Source and output paths
 source: _source
-output: _public
+output: _site
 
 # Build configuration
 paths:

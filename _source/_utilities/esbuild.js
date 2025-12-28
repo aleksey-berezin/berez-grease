@@ -20,7 +20,7 @@ export default function (eleventyConfig) {
 				sourcemap: true,
 				format: 'esm',
 				logLevel: 'warning',
-				outdir: '_public/assets/js',
+				outdir: '_site/assets/js',
 				outbase: '_source/assets/js',
 				metafile: true,
 			});

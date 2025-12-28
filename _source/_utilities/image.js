@@ -15,7 +15,7 @@ export default async function image(
 		widths: [500, 1000, 1500, 2000, 2500, 3000],
 		formats: ['webp'],
 		urlPath: '/assets/images/',
-		outputDir: './_public/assets/images/',
+		outputDir: './_site/assets/images/',
 		sharpWebpOptions: { quality: 40 },
 	});
 	const format = metadata[Object.keys(metadata)[0]];
