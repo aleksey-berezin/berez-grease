@@ -249,6 +249,8 @@ permalink: /
         
         <form class="contact-form" method="post">
           <input type="hidden" name="inbox_key" value="berez-contact-form">
+          <!-- Honeypot field for spam protection (hidden from users, bots will fill it) -->
+          <input type="text" name="_gotcha" style="display: none;" tabindex="-1" autocomplete="off">
           
           <div class="form-group">
             <label for="name">Name</label>
