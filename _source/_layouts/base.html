@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"{% if theme %} class="{{ theme }}"{% endif %}>
+<html lang="en">
 
   <head>
     
@@ -7,16 +7,9 @@
 
     <script>
       document.documentElement.classList.add('js');
-      const theme = localStorage.getItem('theme') || 'default';
-      const mode = localStorage.getItem('mode') || 'system';
-      
-      if (theme !== 'default') {
-        document.documentElement.classList.add(theme);
-      }
-      
-      if (mode !== 'system') {
-        document.documentElement.classList.add(mode);
-      }
+      // Clear any old theme preferences from Grease
+      localStorage.removeItem('theme');
+      localStorage.removeItem('mode');
     </script>
 
     <title>{% if title %}{{ title | escape }} | {% endif %}{{ site.title | escape }}</title>
@@ -46,6 +39,9 @@
       {% getBundle "css" %}
     </style>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/main.css" media="all">
     {%- if stylesheet -%}
     {%- for sheet in stylesheet -%}

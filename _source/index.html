@@ -1,14 +1,243 @@
 ---
-title: Grease
-description: Grease takes the friction out of building fast, adaptable, aesthetic websites.
+title: Berez Investment Group
+description: Boutique investment company focused on multifamily acquisitions in the Pacific Northwest.
 layout: base.html
-# noindex: true
-# canonical: https://example.com/page.html
-permalink: false
+stylesheet:
+  - /assets/css/berez.css
+permalink: /
 ---
 
-{% comment %}
-  Build your real homepage here, but make sure you delete the `permalink: false` line above, and in /docs/index.html.
+<header id="header" class="site-header">
+  <nav class="container flex no-wrap justify-between align-items-center">
+    <a class="logo" href="/">
+      <span class="font-weight-xxl"><span class="logo-short">Berez</span><span class="logo-full">Berez Investment Group</span></span>
+    </a>
+    <a href="#contact" class="button --primary">Contact Us</a>
+  </nav>
+</header>
 
-  That way, you still have the docs and kitchen sink at /docs while you build out your site. The kitchen sink is a helpful tool for seeing all the changes you make in one place!
-{% endcomment %}
+<main>
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">
+        Boutique investment company focused on multifamily acquisitions in the Pacific Northwest.
+      </h1>
+      <p class="hero-subtitle">
+        We acquire, manage, and reposition quality apartment communities with an emphasis on long-term value creation and wealth preservation.
+      </p>
+      <a href="#about" class="button --primary --lg">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Main Content with Side Nav -->
+  <div class="content-layout container">
+    <nav class="side-nav sticky@md top-lg">
+      <ul class="unlisted">
+        <li><a href="#about" class="side-nav-link">About</a></li>
+        <li><a href="#strategy" class="side-nav-link">Strategy</a></li>
+        <li><a href="#criteria" class="side-nav-link">Acquisition Criteria</a></li>
+        <li><a href="#portfolio" class="side-nav-link">Portfolio</a></li>
+        <li><a href="#contact" class="side-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <!-- About Section -->
+      <section id="about" class="content-section">
+        <span class="section-label">About Us</span>
+        <h2 class="section-title">Our Mission</h2>
+        <p class="section-text line-length-lg">
+          Berez Investment Group strategically invests in multifamily communities throughout the Pacific Northwest. Through these investments, we provide significant cash-on-cash returns while preserving and enhancing equity over the long term.
+        </p>
+        <p class="section-text line-length-lg">
+          We invest with confidence in communities that are fulfilling for our residents and strategic for our investors. Our hands-on approach to property management ensures we deliver quality living experiences while maximizing returns.
+        </p>
+      </section>
+
+      <!-- Strategy Section -->
+      <section id="strategy" class="content-section">
+        <span class="section-label">Our Approach</span>
+        <h2 class="section-title">Investment Strategy</h2>
+        
+        <div class="strategy-grid">
+          <div class="strategy-card">
+            <span class="strategy-number">01</span>
+            <h3>Identify</h3>
+            <p>Through our extensive network, we identify stable, well-located multifamily investment opportunities with strong in-place yields and value-add potential.</p>
+          </div>
+          
+          <div class="strategy-card">
+            <span class="strategy-number">02</span>
+            <h3>Acquire</h3>
+            <p>We target properties with operational and physical repositioning opportunities, securing advantageous financing that aligns with each investment's profile.</p>
+          </div>
+          
+          <div class="strategy-card">
+            <span class="strategy-number">03</span>
+            <h3>Reposition</h3>
+            <p>Execute interior and exterior renovations to modernize units and enhance amenities, providing higher quality living while generating substantial ROI.</p>
+          </div>
+          
+          <div class="strategy-card">
+            <span class="strategy-number">04</span>
+            <h3>Manage</h3>
+            <p>Active asset management ensures operational goals are met while maintaining sufficient liquidity for ongoing improvements and long-term value creation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Criteria Section -->
+      <section id="criteria" class="content-section">
+        <span class="section-label">What We're Looking For</span>
+        <h2 class="section-title">Acquisition Criteria</h2>
+        
+        <div class="criteria-grid">
+          <div class="criteria-item">
+            <span class="criteria-label">Property Type</span>
+            <span class="criteria-value">Apartments</span>
+            <span class="criteria-detail">Under 75 units</span>
+          </div>
+          <div class="criteria-item">
+            <span class="criteria-label">Asset Class</span>
+            <span class="criteria-value">B and C</span>
+          </div>
+          <div class="criteria-item">
+            <span class="criteria-label">Construction</span>
+            <span class="criteria-value">Garden / Mid-Rise</span>
+            <span class="criteria-detail">1980s or newer</span>
+          </div>
+          <div class="criteria-item">
+            <span class="criteria-label">Cap Rate</span>
+            <span class="criteria-value">6%+</span>
+          </div>
+          <div class="criteria-item">
+            <span class="criteria-label">Transaction Size</span>
+            <span class="criteria-value">$2–10M</span>
+          </div>
+          <div class="criteria-item">
+            <span class="criteria-label">Market</span>
+            <span class="criteria-value">Portland Metro</span>
+          </div>
+        </div>
+        
+        <p class="criteria-note">
+          We seek properties with operational and physical repositioning opportunities.
+        </p>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="content-section">
+        <span class="section-label">Our Properties</span>
+        <h2 class="section-title">Current Portfolio</h2>
+        
+        <div class="portfolio-grid">
+          <article class="property-card">
+            <div class="property-image">
+              <img src="https://placehold.co/600x400/e8e8e8/666666?text=Glisan+Townhomes" alt="Glisan Townhomes">
+            </div>
+            <div class="property-info">
+              <h3>Glisan Townhomes</h3>
+              <p class="property-meta">10 units · Built 2008</p>
+              <p class="property-desc">Newer townhome community with 2 and 3 bedroom layouts.</p>
+              <a href="https://www.glisantownhomes.com/" target="_blank" rel="noopener" class="property-link">View Property →</a>
+            </div>
+          </article>
+
+          <article class="property-card">
+            <div class="property-image">
+              <img src="https://placehold.co/600x400/e8e8e8/666666?text=Lincoln+Court" alt="Lincoln Court Townhomes">
+            </div>
+            <div class="property-info">
+              <h3>Lincoln Court Townhomes</h3>
+              <p class="property-meta">16 units · Built 1972 · Renovated</p>
+              <p class="property-desc">Renovated townhome community with 2 and 3 bedroom layouts.</p>
+              <a href="https://www.lincolntownhomes.com/" target="_blank" rel="noopener" class="property-link">View Property →</a>
+            </div>
+          </article>
+
+          <article class="property-card">
+            <div class="property-image">
+              <img src="https://placehold.co/600x400/e8e8e8/666666?text=Roberts+Court" alt="Roberts Court Townhomes">
+            </div>
+            <div class="property-info">
+              <h3>Roberts Court Townhomes</h3>
+              <p class="property-meta">20 units · Built 2006</p>
+              <p class="property-desc">Upscale townhome community with 2 and 3 bedroom layouts.</p>
+              <a href="https://www.robertstownhomes.com/" target="_blank" rel="noopener" class="property-link">View Property →</a>
+            </div>
+          </article>
+
+          <article class="property-card">
+            <div class="property-image">
+              <img src="https://placehold.co/600x400/e8e8e8/666666?text=459+Rock" alt="459 Rock Apartments">
+            </div>
+            <div class="property-info">
+              <h3>459 Rock Apartments</h3>
+              <p class="property-meta">44 units · Built 2022 · Mixed Use</p>
+              <p class="property-desc">Mid-rise mixed use community with 2 and 3 bedroom layouts.</p>
+              <a href="https://www.459rock.com/" target="_blank" rel="noopener" class="property-link">View Property →</a>
+            </div>
+          </article>
+
+          <article class="property-card property-card--wip">
+            <div class="property-image">
+              <img src="https://placehold.co/600x400/e8e8e8/666666?text=Eastgate+Terrace" alt="Eastgate Terrace">
+            </div>
+            <div class="property-info">
+              <h3>Eastgate Terrace</h3>
+              <p class="property-meta">Under Renovation</p>
+              <p class="property-desc">Currently undergoing renovation and repositioning.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="content-section">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-text line-length-md mb-lg">
+          Have a property that fits our criteria? Interested in learning more about Berez Investment Group? We'd love to hear from you.
+        </p>
+        
+        <form class="contact-form" data-cloudcannon-form="true" method="post">
+          <input type="hidden" name="_to" value="contact@berez.in">
+          
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="">Select a subject</option>
+              <option value="property">Property Submission</option>
+              <option value="investor">Investor Inquiry</option>
+              <option value="general">General</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="button --primary --lg">Send Message</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; {{ "now" | date: "%Y" }} Berez Investment Group. All rights reserved.</p>
+  </div>
+</footer>

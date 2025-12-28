@@ -48,10 +48,7 @@ h3 {
 :where(p, ul, ol, dl, pre, blockquote) {
 	line-height: var(--line-height-fluid);
 	text-wrap: pretty;
-	color: light-dark(
-		var(--color-text),
-		color-mix(in oklch, var(--color-text), var(--color-bg) 10%)
-	);
+	color: var(--color-text);
 }
 
 :where(a, li, dd, strong, em, i, mark) {
