@@ -54,7 +54,9 @@
   --------------------------------------------------------------------------- */
 
 	/* font stacks */
-	--font-family-main: "DM Sans", system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
+	--font-family-main:
+		"DM Sans", system-ui, -apple-system, blinkmacsystemfont, "Segoe UI",
+		sans-serif;
 	--font-family-code:
 		ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 

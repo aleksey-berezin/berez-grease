@@ -22,10 +22,12 @@ class CountUp {
 					}
 				});
 			},
-			{ threshold: 0.5 }
+			{ threshold: 0.5 },
 		);
 
-		stats.forEach((stat) => observer.observe(stat));
+		for (const stat of stats) {
+			observer.observe(stat);
+		}
 	}
 
 	animate(element) {
@@ -36,7 +38,7 @@ class CountUp {
 
 		const step = (now) => {
 			const progress = Math.min((now - start) / duration, 1);
-			const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+			const eased = 1 - (1 - progress) ** 3; // ease-out cubic
 			const current = target * eased;
 
 			if (target % 1 === 0) {

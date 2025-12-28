@@ -1,8 +1,9 @@
 /* ----------------------------------------------------------------------------
 Creates responsive <picture> elements with multiple formats and caching
 ---------------------------------------------------------------------------- */
-import eleventyImage from '@11ty/eleventy-img';
+
 import path from 'node:path';
+import eleventyImage from '@11ty/eleventy-img';
 
 // Default widths for responsive images (detailed)
 const DEFAULT_WIDTHS = [320, 640, 960, 1280, 1600, 1920, 2400];
