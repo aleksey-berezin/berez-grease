@@ -1,0 +1,27 @@
+{
+  "redirects": [
+    {
+      "from": "http://berez.in/*",
+      "to": "https://www.berez.in/:splat",
+      "status": 301,
+      "force": true
+    },
+    {
+      "from": "http://www.berez.in/*",
+      "to": "https://www.berez.in/:splat",
+      "status": 301,
+      "force": true
+    },
+    {
+      "from": "https://berez.in/*",
+      "to": "https://www.berez.in/:splat",
+      "status": 301,
+      "force": true
+    },
+    {
+      "from": "/wp-content/*",
+      "to": "/",
+      "status": 301
+    }
+  ]
+}

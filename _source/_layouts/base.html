@@ -9,6 +9,7 @@
     {%- assign page_title = title | default: site.title -%}
     {%- assign page_description = description | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
     {%- assign page_image = image | default: site.image -%}
+    {%- comment -%} Construct canonical URL - baseUrl should always be https://www.berez.in {%- endcomment -%}
     {%- assign page_url = site.baseUrl | append: page.url -%}
 
     <meta name="description" content="{{ page_description }}">
@@ -61,6 +62,16 @@
     {%- endif -%}
 
     <!-- JSON-LD Structured Data -->
+    {%- if page.url == '/' -%}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ site.title }}",
+      "url": "{{ site.baseUrl }}"
+    }
+    </script>
+    {%- endif -%}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -134,6 +145,10 @@
       "numberOfEmployees": {
         "@type": "QuantitativeValue",
         "value": "1-10"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Berez Investment Group Team"
       }
     }
     </script>
