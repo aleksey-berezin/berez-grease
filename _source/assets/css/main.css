@@ -39,6 +39,13 @@
 /* -------------------------------------------------------------------------
    Header
    -------------------------------------------------------------------------- */
+:root {
+	/* Fallbacks; will be updated at runtime by JS for pixel-perfect sticky offsets */
+	--header-height: 72px;
+	--header-offset: calc(var(--header-height) + var(--space-xs));
+	--side-nav-scroll-bump: var(--space-sm); /* extra offset once side-nav-scroll marks nav as .scrolled */
+}
+
 .site-header {
 	position: fixed;
 	top: 0;
@@ -274,14 +281,14 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding-top: calc(var(--space-md) * 2 + 1.5rem + var(--space-lg)); /* Account for fixed header */
+	padding-top: calc(var(--header-offset) + var(--space-lg)); /* Account for fixed header */
 	padding-bottom: var(--space-xl);
 	background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-dark) 100%);
 }
 
 @media (--mobile) {
 	.hero-section {
-		padding-top: calc(var(--space-sm) * 2 + 1.5rem + var(--space-md)); /* Smaller header on mobile */
+		padding-top: calc(var(--header-offset) + var(--space-md)); /* Smaller header on mobile */
 	}
 }
 
@@ -324,7 +331,19 @@
 		grid-template-columns: 12rem 1fr;
 		gap: var(--space-xxl);
 		align-items: start;
-		padding-block: var(--space-xxl) var(--space-xxl);
+		/* Add a shared top inset so side-nav and first section content start at the same visual baseline */
+		padding-block: var(--space-xl) var(--space-xxl);
+	}
+}
+
+@media (min-width: 768px) {
+	/* The sections have built-in top padding; remove it for the first section so it aligns with the side nav */
+	.main-content > .content-section:first-child {
+		padding-top: 0;
+	}
+
+	.side-nav.scrolled {
+		top: calc(var(--header-offset) + var(--side-nav-scroll-bump));
 	}
 }
 
@@ -339,10 +358,11 @@
 	.side-nav {
 		display: block;
 		position: sticky;
-		top: calc(var(--space-md) * 2 + 1.5rem + var(--space-sm)); /* Account for fixed header */
+		top: var(--header-offset); /* Account for fixed header */
 		align-self: start;
-		padding-top: var(--space-xl); /* Align with section-label (red eyebrow text) */
+		padding-top: 0;
 	}
+
 
 	.side-nav ul {
 		display: flex;
@@ -400,6 +420,8 @@
 }
 
 .section-title {
+	/* When jumping to #hash anchors, keep the title visible below the fixed header */
+	scroll-margin-top: var(--header-offset);
 	font-size: var(--font-size-xxl);
 	font-weight: var(--font-weight-xxl);
 	color: var(--color-text);
@@ -473,6 +495,59 @@
 }
 
 .strategy-card p {
+	font-size: var(--font-size-sm);
+	line-height: var(--line-height-lg);
+	color: var(--color-text-muted);
+	margin: 0;
+}
+
+/* -------------------------------------------------------------------------
+   Management Approach Cards
+   -------------------------------------------------------------------------- */
+.approach-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-md);
+	margin-top: var(--space-lg);
+	margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+	.approach-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.approach-card {
+	padding: var(--space-lg);
+	background: var(--color-bg-dark);
+	border-radius: var(--border-radius-md);
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.approach-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.approach-number {
+	display: inline-block;
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-xxl);
+	color: var(--color-accent);
+	margin-bottom: var(--space-sm);
+}
+
+.approach-card h4 {
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-xl);
+	color: var(--color-text);
+	margin-bottom: var(--space-sm);
+}
+
+.approach-card p {
 	font-size: var(--font-size-sm);
 	line-height: var(--line-height-lg);
 	color: var(--color-text-muted);
@@ -871,6 +946,102 @@
 .property-card--wip .property-image {
 	filter: grayscale(50%);
 }
+
+/* -------------------------------------------------------------------------
+   Property Management Philosophy
+   -------------------------------------------------------------------------- */
+.subsection-title {
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-xl);
+	color: var(--color-text);
+	margin-block: var(--space-lg) var(--space-md);
+	border-bottom: 1px solid var(--color-border);
+	padding-bottom: var(--space-xs);
+}
+
+/* -------------------------------------------------------------------------
+   FAQ Accordion
+   -------------------------------------------------------------------------- */
+.faq-accordion {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+	margin-top: var(--space-lg);
+}
+
+.faq-item {
+	background: var(--color-bg-dark);
+	border-radius: var(--border-radius-sm);
+	padding-inline: var(--space-md);
+}
+
+.faq-question {
+	display: block;
+	width: 100%;
+	padding: var(--space-md) var(--space-lg) var(--space-md) 0;
+	position: relative;
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-lg);
+	color: var(--color-text);
+	cursor: pointer;
+	list-style: none;
+	line-height: 1.5;
+	text-align: left;
+	transition: color 0.2s ease;
+}
+
+/* Remove default marker in all browsers */
+.faq-question::-webkit-details-marker {
+	display: none;
+}
+
+.faq-question::marker {
+	display: none;
+	content: none;
+}
+
+.faq-item > .faq-question {
+	list-style-type: none;
+}
+
+.faq-question::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0.75rem;
+	height: 0.75rem;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23999' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	transition: transform 0.2s ease;
+}
+
+.faq-item[open] .faq-question::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-question:hover {
+	color: var(--color-accent);
+}
+
+.faq-answer {
+	padding: 0 0 var(--space-md) 0;
+	color: var(--color-text-muted);
+	font-size: var(--font-size-sm);
+	line-height: var(--line-height-lg);
+}
+
+.faq-answer p {
+	margin: 0;
+}
+
+.faq-answer p + p {
+	margin-top: var(--space-sm);
+}
+
 
 /* -------------------------------------------------------------------------
    Contact Form

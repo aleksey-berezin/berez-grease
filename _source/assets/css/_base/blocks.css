@@ -31,7 +31,7 @@
 
 html {
 	min-block-size: 100dvh;
-	scroll-padding-top: var(--space-xl);
+	scroll-padding-top: var(--header-offset, var(--space-xl));
 	color: var(--color-text);
 	background-color: var(--color-bg);
 	accent-color: var(--color-accent);
